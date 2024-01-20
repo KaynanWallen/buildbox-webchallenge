@@ -3,6 +3,9 @@ import { Card, Header, Main, Imagem, Container, Input, TextArea, Button, Feed, H
 import logo from '../public/img/bx-logo.png'
 import trash from '../public/img/trash.png'
 import deleted from '../public/img/delete.png'
+import photoBase1 from '../public/img/photo-base1.png';
+import photoBase2 from '../public/img/photo-base2.png';
+import photoBase3 from '../public/img/photo-base3.png';
 import { useEffect, useState } from 'react'
 
 
@@ -89,7 +92,7 @@ function App() {
         <Card cardSize='md'>
           <Container flexdirection='row' gap={15} alignItems='center' justifyContent='center'>
             <Container flexdirection='col' gap={15} alignItems='center' justifyContent='center'>
-              <Imagem imageSize='lg' imageRadius='lg' src={`../public/img/photo-base${random}.png`} alt='Foto de perfil 1' />
+              <Imagem imageSize='lg' imageRadius='lg' src={random === 1 ? photoBase1 : random === 2 ? photoBase2 : photoBase3} alt='Foto de perfil 1' />
               <Button buttonBackground='color' onClick={() => handleRandomImage()}>Alterar Imagem</Button>
             </Container>
             <Imagem imageSize='md' imageRadius='none' cursor='pointer' src={trash} alt='Icon lixeira' />
@@ -122,7 +125,7 @@ function App() {
                   </Container>
 
                   <Container flexdirection='row' gap={25} alignItems='center' justifyContent='start'>
-                    <Imagem src={`../public/img/photo-base${post.imagem}.png`} imageSize='lg' imageRadius='lg' />
+                    <Imagem src={random === 1 ? photoBase1 : random === 2 ? photoBase2 : photoBase3} imageSize='lg' imageRadius='lg' />
                     <Container flexdirection='col' gap={15} alignItems='start' justifyContent='center'>
                       <P fontSize='lg'>{post.mensagem}</P>
 
